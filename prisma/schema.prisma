@@ -17,6 +17,7 @@ model Course {
   longitude      Float
   descriptionEt  String?  @db.Text
   descriptionEn  String?  @db.Text
+  imageUrl String?
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 

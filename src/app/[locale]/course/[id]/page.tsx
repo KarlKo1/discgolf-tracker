@@ -1,7 +1,10 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
-import { getActiveCountsByCourse, getActiveCheckInForDevice } from "@/lib/traffic";
+import {
+  getActiveCountsByCourse,
+  getActiveCheckInForDevice,
+} from "@/lib/traffic";
 import { getDeviceId } from "@/lib/device";
 import { fetchCurrentWeather, weatherEmoji } from "@/lib/weather";
 import { ESTONIAN_COUNTIES } from "@/lib/constants";
@@ -25,6 +28,7 @@ export default async function CoursePage({
     where: { id },
     include: { holes: { orderBy: { number: "asc" } } },
   });
+
   if (!course) notFound();
 
   const [counts, weather, deviceId] = await Promise.all([
@@ -39,10 +43,13 @@ export default async function CoursePage({
 
   const activeCount = counts[course.id] ?? 0;
   const name = locale === "en" ? course.nameEn : course.nameEt;
-  const description = locale === "en" ? course.descriptionEn : course.descriptionEt;
+  const description =
+    locale === "en" ? course.descriptionEn : course.descriptionEt;
+
   const countyLabel =
     ESTONIAN_COUNTIES[course.county]?.[locale === "en" ? "en" : "et"] ??
     course.county;
+
   const totalPar = course.holes.reduce((sum, h) => sum + h.par, 0);
 
   return (
@@ -52,18 +59,32 @@ export default async function CoursePage({
           href={{ pathname: "/", query: { county: course.county } }}
           className="text-sm text-emerald-700 dark:text-emerald-400 hover:underline focus:outline-none w-fit inline-flex items-center gap-1"
         >
-          <span aria-hidden>←</span>
+          <span aria-hidden="true">←</span>
           {t("course.backToCountyMap", { county: countyLabel })}
         </Link>
+
         <div className="text-xs uppercase tracking-wide text-neutral-500">
           {countyLabel}
           {course.city ? ` · ${course.city}` : ""}
         </div>
+
         <h1 className="text-3xl font-semibold">{name}</h1>
+
         {description && (
           <p className="text-neutral-600 dark:text-neutral-300 max-w-2xl">
             {description}
           </p>
+        )}
+
+        {/* Raja üldpilt kuvatakse kirjelduse all */}
+        {course.imageUrl && (
+          <div className="mt-4">
+            <img
+              src={course.imageUrl}
+              alt={`${name} – raja üldpilt`}
+              className="w-full max-h-[600px] object-contain rounded-2xl border border-neutral-200 dark:border-neutral-800"
+            />
+          </div>
         )}
       </div>
 
@@ -72,13 +93,9 @@ export default async function CoursePage({
           <div className="text-xs uppercase text-neutral-500">
             {t("course.traffic")}
           </div>
-          <div className="text-3xl font-semibold">
-            {activeCount}
-          </div>
+          <div className="text-3xl font-semibold">{activeCount}</div>
           <div className="text-sm text-neutral-500">
-            {activeCount === 0
-              ? t("course.noPlayers")
-              : t("course.playersNow")}
+            {activeCount === 0 ? t("course.noPlayers") : t("course.playersNow")}
           </div>
         </div>
 
@@ -96,6 +113,7 @@ export default async function CoursePage({
           <div className="text-xs uppercase text-neutral-500">
             {t("course.weather")}
           </div>
+
           {weather ? (
             <>
               <div className="text-3xl font-semibold flex items-center gap-2">
@@ -106,6 +124,7 @@ export default async function CoursePage({
                     : "—"}
                 </span>
               </div>
+
               <div className="text-sm text-neutral-500">
                 {t("course.windSpeed")}:{" "}
                 {weather.windSpeedKmh != null
@@ -141,6 +160,7 @@ export default async function CoursePage({
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-4">
           <h2 className="text-lg font-semibold mb-3">{t("course.holes")}</h2>
+
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead className="text-neutral-500">
@@ -150,6 +170,7 @@ export default async function CoursePage({
                   <th className="text-left py-2">{t("course.distance")}</th>
                 </tr>
               </thead>
+
               <tbody>
                 {course.holes.map((h) => (
                   <tr
@@ -169,7 +190,11 @@ export default async function CoursePage({
         </div>
 
         <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 p-4 flex flex-col gap-3">
-          <CourseMiniMap lat={course.latitude} lng={course.longitude} name={name} />
+          <CourseMiniMap
+            lat={course.latitude}
+            lng={course.longitude}
+            name={name}
+          />
           <ReportIssueButton courseId={course.id} />
         </div>
       </div>

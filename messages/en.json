@@ -4,7 +4,10 @@
     "tagline": "See courses, weather and live traffic before heading out"
   },
   "home": {
-    "currentlyAt": "Currently on course"
+    "currentlyAt": "Currently on course",
+    "searchLabel": "Search courses",
+    "searchPlaceholder": "Course name, city or county...",
+    "searchNoResults": "No matching courses found."
   },
   "legend": {
     "label": "Course traffic",

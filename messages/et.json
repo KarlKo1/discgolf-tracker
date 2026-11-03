@@ -4,7 +4,10 @@
     "tagline": "Vaata radu, ilma ja liiklust enne mängima minekut"
   },
   "home": {
-    "currentlyAt": "Praegu rajal"
+    "currentlyAt": "Praegu rajal",
+    "searchLabel": "Otsi rada",
+    "searchPlaceholder": "Raja nimi, linn või maakond...",
+    "searchNoResults": "Sobivaid radu ei leitud."
   },
   "legend": {
     "label": "Rajaliiklus",

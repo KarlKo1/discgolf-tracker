@@ -101,7 +101,45 @@
     "notFound": "Course not found",
     "backToCountyMap": "Back to {county} courses",
     "autoCheckedOut": "You've been checked out of the course (session ended).",
-    "selfCheckedOut": "You've left the course."
+    "selfCheckedOut": "You've left the course.",
+    "activity": {
+      "title": "When is this course usually busiest?",
+      "description": "Last {days} days · {checkIns} round starts",
+      "busiest": "Usually busiest",
+      "quietest": "Usually quieter",
+      "heatmapTitle": "Typical activity by weekday and time",
+      "weekdayLabel": "Day",
+      "less": "Less",
+      "more": "More",
+      "notEnoughData": "There isn't enough activity data for this course yet. As more rounds are recorded, we'll be able to show you when the course is busiest.",
+      "disclaimer": "Based on round start times and group size. This shows typical activity, not the live number of players on the course.",
+      "cellTooltip": "{weekday}, {time}: {players} players · {checkIns} check-ins",
+      "weekdays": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+      },
+      "mobileTitle": "Activity by day",
+      "mobileHint": "Choose a day to see typical activity by time.",
+      "mobilePlayers": "{count} players",
+      "noActivity": "Little data",
+      "peakLabel": "busiest time",
+      "showAllStats": "View all statistics",
+      "hideAllStats": "Hide extra statistics",
+      "weekdayShort": {
+        "monday": "M",
+        "tuesday": "T",
+        "wednesday": "W",
+        "thursday": "T",
+        "friday": "F",
+        "saturday": "S",
+        "sunday": "S"
+      }
+    }
   },
   "checkin": {
     "checkingIn": "Checking you in...",

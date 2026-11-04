@@ -12,6 +12,8 @@ import { CheckInPanel } from "@/components/course/CheckInPanel";
 import { ReportIssueButton } from "@/components/course/ReportIssueButton";
 import { CourseMiniMap } from "@/components/map/CourseMiniMap";
 import { Link } from "@/i18n/navigation";
+import { CourseActivityStats } from "@/components/course/CourseActivityStats";
+import { getCourseActivityStats } from "@/lib/course-activity";
 
 export const dynamic = "force-dynamic";
 
@@ -31,10 +33,11 @@ export default async function CoursePage({
 
   if (!course) notFound();
 
-  const [counts, weather, deviceId] = await Promise.all([
+  const [counts, weather, deviceId, activityStats] = await Promise.all([
     getActiveCountsByCourse([course.id]),
     fetchCurrentWeather(course.latitude, course.longitude),
     getDeviceId(),
+    getCourseActivityStats(course.id),
   ]);
 
   const active = deviceId
@@ -156,6 +159,8 @@ export default async function CoursePage({
             : null
         }
       />
+
+      <CourseActivityStats stats={activityStats} />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="md:col-span-2 rounded-2xl border border-neutral-200 dark:border-neutral-800 p-4">

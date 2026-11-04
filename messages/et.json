@@ -101,7 +101,45 @@
     "notFound": "Rada ei leitud",
     "backToCountyMap": "Tagasi {county} radade juurde",
     "autoCheckedOut": "Sind on rajalt maha märgitud (aeg sai täis).",
-    "selfCheckedOut": "Sa oled rajalt lahkunud."
+    "selfCheckedOut": "Sa oled rajalt lahkunud.",
+    "activity": {
+      "title": "Millal on rajal kõige rohkem mängijaid?",
+      "description": "Viimase {days} päeva statistika · {checkIns} mänguringi algust",
+      "busiest": "Tavaliselt aktiivseim",
+      "quietest": "Tavaliselt rahulikum",
+      "heatmapTitle": "Tavapärane aktiivsus nädalapäevade ja kellaaegade lõikes",
+      "weekdayLabel": "Päev",
+      "less": "Vähem",
+      "more": "Rohkem",
+      "notEnoughData": "Selle raja mängijate aktiivsuse kohta pole veel piisavalt andmeid. Kogume rohkem mängukordi ja peagi saame näidata, millal on rajal kõige rohkem mängijaid.",
+      "disclaimer": "Statistika põhineb mänguringide algusaegadel ja grupi suurusel. See näitab tavapärast aktiivsust, mitte reaalajas rajal olevate mängijate arvu.",
+      "cellTooltip": "{weekday}, {time}: {players} mängijat · {checkIns} registreerimist",
+      "weekdays": {
+        "monday": "Esmaspäev",
+        "tuesday": "Teisipäev",
+        "wednesday": "Kolmapäev",
+        "thursday": "Neljapäev",
+        "friday": "Reede",
+        "saturday": "Laupäev",
+        "sunday": "Pühapäev"
+      },
+      "mobileTitle": "Aktiivsus päevade kaupa",
+      "mobileHint": "Vali päev, et näha tavapärast aktiivsust kellaaegade lõikes.",
+      "mobilePlayers": "{count} mängijat",
+      "noActivity": "Vähe andmeid",
+      "peakLabel": "aktiivseim aeg",
+      "showAllStats": "Vaata kogu statistikat",
+      "hideAllStats": "Peida lisastatistika",
+      "weekdayShort": {
+        "monday": "E",
+        "tuesday": "T",
+        "wednesday": "K",
+        "thursday": "N",
+        "friday": "R",
+        "saturday": "L",
+        "sunday": "P"
+      }
+    }
   },
   "checkin": {
     "checkingIn": "Registreerin rajale...",

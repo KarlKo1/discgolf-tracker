@@ -158,7 +158,19 @@
     "submit": "Send",
     "cancel": "Cancel",
     "success": "Thanks! Report sent.",
-    "error": "Failed to send"
+    "error": "Failed to send",
+    "typeLabel": "Issue type",
+    "types": {
+      "broken_basket": "Broken basket",
+      "course_maintenance": "Course maintenance",
+      "tee_area": "Tee area problem",
+      "signage": "Broken sign or information board",
+      "obstacle": "Obstacle on the course",
+      "litter": "Litter or full bin",
+      "other_course": "Other course issue",
+      "app_bug": "App bug",
+      "other": "Other issue"
+    }
   },
   "admin": {
     "title": "Admin panel",
@@ -288,7 +300,26 @@
     "setNewPassword": "Set new password",
     "resetPasswordDone": "Your password has been changed. You can now sign in with it.",
     "resetLinkInvalid": "This reset link is invalid or has expired.",
-    "requestNewLink": "Request a new link"
+    "requestNewLink": "Request a new link",
+    "issueInProgress": "In progress",
+    "issueChangeStatus": "Change status",
+    "issueFilterStatus": "Status",
+    "issueFilterType": "Issue type",
+    "issueFilterCourse": "Course",
+    "issueFilterAll": "All",
+    "issueFilterResults": "Reports found: {count}",
+    "noFilteredIssues": "No reports match the selected filters.",
+    "issueNoCourse": "No course assigned",
+    "issueTypeUnassigned": "Unassigned",
+    "issueType_broken_basket": "Broken basket",
+    "issueType_course_maintenance": "Course maintenance",
+    "issueType_tee_area": "Tee area problem",
+    "issueType_signage": "Broken sign or information board",
+    "issueType_obstacle": "Obstacle on the course",
+    "issueType_litter": "Litter or full bin",
+    "issueType_other_course": "Other course issue",
+    "issueType_app_bug": "App bug",
+    "issueType_other": "Other issue"
   },
   "common": {
     "loading": "Loading...",

@@ -74,6 +74,7 @@ model IssueReport {
   id        String   @id @default(cuid())
   courseId  String?
   category  String
+  issueType String?
   message   String   @db.Text
   deviceId  String?
   status    String   @default("open")
@@ -82,6 +83,7 @@ model IssueReport {
   course Course? @relation(fields: [courseId], references: [id], onDelete: SetNull)
 
   @@index([status, createdAt])
+  @@index([issueType, status])
 }
 
 model Admin {

@@ -158,7 +158,19 @@
     "submit": "Saada",
     "cancel": "Tühista",
     "success": "Aitäh! Teade on saadetud.",
-    "error": "Viga saatmisel"
+    "error": "Viga saatmisel",
+    "typeLabel": "Probleemi täpsustus",
+    "types": {
+      "broken_basket": "Korv katki",
+      "course_maintenance": "Rada hooldamata",
+      "tee_area": "Tiiala probleem",
+      "signage": "Silt või infotahvel katki",
+      "obstacle": "Takistus rajal",
+      "litter": "Prügi või prügikast",
+      "other_course": "Muu rajaprobleem",
+      "app_bug": "Rakenduse viga",
+      "other": "Muu probleem"
+    }
   },
   "admin": {
     "title": "Halduspaneel",
@@ -288,7 +300,26 @@
     "setNewPassword": "Määra uus parool",
     "resetPasswordDone": "Parool on muudetud. Nüüd saad sellega sisse logida.",
     "resetLinkInvalid": "See lähtestamise link on vigane või aegunud.",
-    "requestNewLink": "Küsi uus link"
+    "requestNewLink": "Küsi uus link",
+    "issueInProgress": "Töös",
+    "issueChangeStatus": "Muuda olekut",
+    "issueFilterStatus": "Olek",
+    "issueFilterType": "Probleemi tüüp",
+    "issueFilterCourse": "Rada",
+    "issueFilterAll": "Kõik",
+    "issueFilterResults": "Leitud teateid: {count}",
+    "noFilteredIssues": "Valitud filtritega teateid ei leitud.",
+    "issueNoCourse": "Rada pole määratud",
+    "issueTypeUnassigned": "Määramata",
+    "issueType_broken_basket": "Korv katki",
+    "issueType_course_maintenance": "Rada hooldamata",
+    "issueType_tee_area": "Tiiala probleem",
+    "issueType_signage": "Silt või infotahvel katki",
+    "issueType_obstacle": "Takistus rajal",
+    "issueType_litter": "Prügi või prügikast",
+    "issueType_other_course": "Muu rajaprobleem",
+    "issueType_app_bug": "Rakenduse viga",
+    "issueType_other": "Muu probleem"
   },
   "common": {
     "loading": "Laadin...",

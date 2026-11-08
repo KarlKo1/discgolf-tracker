@@ -20,7 +20,8 @@
     "primary": "Primary",
     "home": "Map",
     "admin": "Admin",
-    "reportIssue": "Report an issue"
+    "reportIssue": "Report an issue",
+    "faq": "FAQ"
   },
   "a11y": {
     "skipToContent": "Skip to main content",
@@ -354,6 +355,34 @@
     "cancel": "Cancel",
     "close": "Close",
     "back": "Back"
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "intro": "Find answers about using Disc Golf Tracker, courses, data and privacy.",
+    "coursesTitle": "Courses",
+    "coursesMissingQ": "Why aren't all disc golf courses listed?",
+    "coursesMissingA": "The app currently displays courses that have been added to the system. The list is gradually expanding. If your local course is missing, please let us know.",
+    "coursesAddQ": "How can a new course be added?",
+    "coursesAddA": "New courses are added by the app administrators. You can let us know about a missing course at info@digiarendus.ee.",
+    "dataTitle": "Data and privacy",
+    "dataTrackedQ": "What data does the app track?",
+    "dataTrackedA": "When you check in, the app stores the course, timestamp, group size and an anonymous device ID. This data is used to show live player counts and calculate aggregated statistics.",
+    "locationQ": "Does the app track my location?",
+    "locationA": "The app does not store your GPS route. A check-in is associated with the course you select. OpenStreetMap, the map provider, may see your IP address when map tiles are loaded.",
+    "deviceIdQ": "What is an anonymous device ID?",
+    "deviceIdA": "It is a randomly generated identifier stored in your browser when you check in to a course. It links visits from the same device without using your name or contact details.",
+    "checkinTitle": "Course visits",
+    "checkinQ": "How does course check-in work?",
+    "checkinA": "Open a course page and press the check-in button. Your activity is updated during the visit, allowing the app to show how many players are currently on the course.",
+    "checkinDataQ": "Can other users see my visit?",
+    "checkinDataA": "Other users can see the total number of players on the course, but not your name or personal contact details.",
+    "ratingsTitle": "Ratings and issue reports",
+    "ratingQ": "How can I rate a course?",
+    "ratingA": "Your device must have been recently active on that course. You can rate the overall experience, maintenance and tee areas. You can edit your rating for up to three days after your last activity on the course.",
+    "issueQ": "How can I report a problem with a course?",
+    "issueA": "Use the \"Report an issue\" button on the course page. Select an issue type and provide as much detail as possible. The report is sent to the course administrators for review.",
+    "conditionQ": "Who sets the official course condition?",
+    "conditionA": "The official course condition is set by the course administrator or a superuser. This is separate from visitor ratings."
   },
   "privacy": {
     "title": "Privacy policy",

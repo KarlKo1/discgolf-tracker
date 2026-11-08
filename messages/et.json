@@ -20,7 +20,8 @@
     "primary": "Peamenüü",
     "home": "Kaart",
     "admin": "Admin",
-    "reportIssue": "Teata probleemist"
+    "reportIssue": "Teata probleemist",
+    "faq": "KKK"
   },
   "a11y": {
     "skipToContent": "Liigu põhisisu juurde",
@@ -354,6 +355,34 @@
     "cancel": "Tühista",
     "close": "Sulge",
     "back": "Tagasi"
+  },
+  "faq": {
+    "title": "Korduma kippuvad küsimused",
+    "intro": "Siit leiad vastused Disc Golf Trackeri kasutamise, radade, andmete ja privaatsuse kohta.",
+    "coursesTitle": "Rajad",
+    "coursesMissingQ": "Miks kõiki discgolfi radu rakenduses pole?",
+    "coursesMissingA": "Rakenduses kuvatakse praegu lisatud rajad. Radade nimekiri täieneb järk-järgult. Kui sinu kodurada puudub, anna meile sellest teada.",
+    "coursesAddQ": "Kuidas saab uut rada lisada?",
+    "coursesAddA": "Uusi radu lisavad rakenduse haldajad. Puuduva raja kohta saad meile saata teate aadressile info@digiarendus.ee.",
+    "dataTitle": "Andmed ja privaatsus",
+    "dataTrackedQ": "Milliseid andmeid rakendus jälgib?",
+    "dataTrackedA": "Rakendus salvestab raja külastuse registreerimisel raja, kellaaja, grupi suuruse ja anonüümse seadme ID. Nende andmete abil näidatakse reaalajas rajal olevate mängijate arvu ja arvutatakse koondstatistikat.",
+    "locationQ": "Kas rakendus jälgib minu asukohta?",
+    "locationA": "Rakendus ei salvesta sinu GPS-teekonda. Külastus seotakse sinu valitud rajaga. Kaarditeenuse pakkuja OpenStreetMap võib kaardi laadimisel näha sinu IP-aadressi.",
+    "deviceIdQ": "Mis on anonüümne seadme ID?",
+    "deviceIdA": "See on juhuslik tunnus, mis salvestatakse sinu brauserisse siis, kui registreerid end rajale. Seda kasutatakse külastuste sidumiseks sama seadmega, mitte sinu nime või kontaktandmetega.",
+    "checkinTitle": "Raja külastamine",
+    "checkinQ": "Kuidas raja külastuse registreerimine töötab?",
+    "checkinA": "Ava raja leht ja vajuta registreerimise nuppu. Külastuse ajal uuendatakse aktiivsust ning rakendus saab näidata, kui palju mängijaid rajal viibib.",
+    "checkinDataQ": "Kas minu külastus on teistele nähtav?",
+    "checkinDataA": "Teised kasutajad näevad rajal olevate mängijate koondarvu, mitte sinu nime ega isiklikke kontaktandmeid.",
+    "ratingsTitle": "Hinnangud ja probleemidest teatamine",
+    "ratingQ": "Kuidas saab rajale hinnangut anda?",
+    "ratingA": "Hinnangu andmiseks peab sinu seade olema sellel rajal hiljuti aktiivne. Hinnata saab üldist kogemust, hooldust ja tiialade seisukorda. Hinnangut saab muuta kuni kolm päeva pärast viimast aktiivsust rajal.",
+    "issueQ": "Kuidas teatada raja probleemidest?",
+    "issueA": "Kasuta raja lehel nuppu „Teata probleemist“. Vali probleemi tüüp ja lisa võimalikult täpne kirjeldus. Teade jõuab raja haldajateni ülevaatamiseks.",
+    "conditionQ": "Kes määrab raja ametliku seisukorra?",
+    "conditionA": "Raja ametliku seisukorra määrab raja haldaja või rakenduse peakasutaja. Külastajate antud hinnangud on sellest eraldi."
   },
   "privacy": {
     "title": "Privaatsuspoliitika",

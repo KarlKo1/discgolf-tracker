@@ -193,7 +193,7 @@ export function AdminDashboard() {
                         <button
                           type="button"
                           onClick={() => deleteCourse(c)}
-                          className="text-sm px-3 py-1.5 rounded-full border border-red-300 dark:border-red-900 text-red-600 hover:bg-red-50 dark:hover:bg-red-950 transition min-h-11"
+                          className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 text-red-600 dark:text-red-400 bg-transparent hover:bg-red-50 dark:hover:bg-red-500/10 hover:border-red-300 dark:hover:border-red-500/40 transition-colors min-h-11"
                         >
                           {t("delete")}
                         </button>

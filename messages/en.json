@@ -347,7 +347,53 @@
     "issueType_litter": "Litter or full bin",
     "issueType_other_course": "Other course issue",
     "issueType_app_bug": "App bug",
-    "issueType_other": "Other issue"
+    "issueType_other": "Other issue",
+
+    "courseNotices": {
+      "manageButton": "Notices",
+      "title": "Course notices",
+      "close": "Close",
+      "addNotice": "Add new notice",
+      "editNotice": "Edit notice",
+      "type": "Notice type",
+      "types": {
+        "info": "Information",
+        "event": "Event",
+        "maintenance": "Maintenance",
+        "closed": "Course closed"
+      },
+      "titleEt": "Title in Estonian",
+      "titleEn": "Title in English",
+      "messageEt": "Message in Estonian",
+      "messageEn": "Message in English",
+      "startsAt": "Display starts",
+      "endsAt": "Display ends",
+      "active": "Notice is active",
+      "saving": "Saving...",
+      "saveChanges": "Save changes",
+      "cancel": "Cancel editing",
+      "existingNotices": "Existing notices",
+      "loading": "Loading notices...",
+      "noNotices": "There are no notices for this course yet.",
+      "activeStatus": "Active",
+      "inactiveStatus": "Inactive",
+      "edit": "Edit",
+      "delete": "Delete",
+      "confirmDelete": "Delete notice \"{title}\"?",
+      "loadError": "Failed to load notices.",
+      "saveError": "Failed to save notice.",
+      "deleteError": "Failed to delete notice.",
+      "dateError": "The end time cannot be earlier than the start time."
+    }
+  },
+  "courseNotices": {
+    "heading": "Course notices",
+    "types": {
+      "info": "Information",
+      "event": "Event",
+      "maintenance": "Maintenance",
+      "closed": "Course closed"
+    }
   },
   "common": {
     "loading": "Loading...",

@@ -8,6 +8,7 @@ import { CourseQr } from "./CourseQr";
 import { AdminUsers } from "./AdminUsers";
 import { AdminAnalytics } from "./AdminAnalytics";
 import { AdminIssues } from "./AdminIssues";
+import { AdminCourseNotices } from "./AdminCourseNotices";
 import { ESTONIAN_COUNTIES } from "@/lib/constants";
 
 type Issue = {
@@ -40,6 +41,7 @@ export function AdminDashboard() {
   const [issues, setIssues] = useState<Issue[]>([]);
   const [editing, setEditing] = useState<CourseWithHoles | "new" | null>(null);
   const [qrFor, setQrFor] = useState<CourseWithHoles | null>(null);
+  const [noticesFor, setNoticesFor] = useState<CourseWithHoles | null>(null);
   const [loading, setLoading] = useState(true);
 
   async function loadMe() {
@@ -176,6 +178,13 @@ export function AdminDashboard() {
                     <div className="flex gap-2 flex-wrap">
                       <button
                         type="button"
+                        onClick={() => setNoticesFor(c)}
+                        className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition min-h-11"
+                      >
+                        {t("courseNotices.manageButton")}
+                      </button>
+                      <button
+                        type="button"
                         onClick={() => setQrFor(c)}
                         className="text-sm px-3 py-1.5 rounded-full border border-neutral-300 dark:border-neutral-700 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition min-h-11"
                       >
@@ -244,6 +253,13 @@ export function AdminDashboard() {
       )}
 
       {qrFor && <CourseQr course={qrFor} onClose={() => setQrFor(null)} />}
+      {noticesFor && (
+        <AdminCourseNotices
+          courseId={noticesFor.id}
+          courseName={noticesFor.nameEt}
+          onClose={() => setNoticesFor(null)}
+        />
+      )}
     </div>
   );
 }

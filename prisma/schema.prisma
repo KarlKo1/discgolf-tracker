@@ -26,6 +26,7 @@ model Course {
   issues   IssueReport[]
   admins   CourseAdmin[]
   ratings  CourseRating[]
+  notices  CourseNotice[]
 }
 
 model Hole {
@@ -161,4 +162,27 @@ model CourseRating {
 
   @@unique([courseId, deviceId])
   @@index([courseId, createdAt])
+}
+
+model CourseNotice {
+  id       String @id @default(cuid())
+  courseId String
+
+  type      String @default("info")
+  titleEt   String @db.VarChar(160)
+  titleEn   String @db.VarChar(160)
+  messageEt String @db.Text
+  messageEn String @db.Text
+
+  isActive Boolean   @default(true)
+  startsAt DateTime?
+  endsAt   DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+
+  @@index([courseId, isActive])
+  @@index([courseId, startsAt, endsAt])
 }

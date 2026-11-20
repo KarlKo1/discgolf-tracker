@@ -347,7 +347,53 @@
     "issueType_litter": "Prügi või prügikast",
     "issueType_other_course": "Muu rajaprobleem",
     "issueType_app_bug": "Rakenduse viga",
-    "issueType_other": "Muu probleem"
+    "issueType_other": "Muu probleem",
+
+    "courseNotices": {
+      "manageButton": "Teated",
+      "title": "Raja teated",
+      "close": "Sulge",
+      "addNotice": "Lisa uus teade",
+      "editNotice": "Muuda teadet",
+      "type": "Teate tüüp",
+      "types": {
+        "info": "Info",
+        "event": "Üritus",
+        "maintenance": "Hooldustöö",
+        "closed": "Rada suletud"
+      },
+      "titleEt": "Pealkiri eesti keeles",
+      "titleEn": "Pealkiri inglise keeles",
+      "messageEt": "Sõnum eesti keeles",
+      "messageEn": "Sõnum inglise keeles",
+      "startsAt": "Näitamise algus",
+      "endsAt": "Näitamise lõpp",
+      "active": "Teade on aktiivne",
+      "saving": "Salvestan...",
+      "saveChanges": "Salvesta muudatused",
+      "cancel": "Tühista muutmine",
+      "existingNotices": "Olemasolevad teated",
+      "loading": "Laen teateid...",
+      "noNotices": "Sellel rajal pole veel teateid.",
+      "activeStatus": "Aktiivne",
+      "inactiveStatus": "Mitteaktiivne",
+      "edit": "Muuda",
+      "delete": "Kustuta",
+      "confirmDelete": "Kas kustutada teade \"{title}\"?",
+      "loadError": "Teadete laadimine ebaõnnestus.",
+      "saveError": "Teate salvestamine ebaõnnestus.",
+      "deleteError": "Teate kustutamine ebaõnnestus.",
+      "dateError": "Lõpuaeg ei saa olla algusajast varasem."
+    }
+  },
+  "courseNotices": {
+    "heading": "Raja teated",
+    "types": {
+      "info": "Info",
+      "event": "Üritus",
+      "maintenance": "Hooldustöö",
+      "closed": "Rada suletud"
+    }
   },
   "common": {
     "loading": "Laadin...",

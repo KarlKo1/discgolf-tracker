@@ -34,7 +34,9 @@ export default async function CoursePage({
 
   if (!course) notFound();
 
-  const [counts, weather, deviceId, activityStats, activeIssues] =
+  const now = new Date();
+
+  const [counts, weather, deviceId, activityStats, activeIssues, notices] =
     await Promise.all([
       getActiveCountsByCourse([course.id]),
       fetchCurrentWeather(course.latitude, course.longitude),
@@ -53,6 +55,22 @@ export default async function CoursePage({
           status: true,
           createdAt: true,
         },
+      }),
+
+      prisma.courseNotice.findMany({
+        where: {
+          courseId: course.id,
+          isActive: true,
+          AND: [
+            {
+              OR: [{ startsAt: null }, { startsAt: { lte: now } }],
+            },
+            {
+              OR: [{ endsAt: null }, { endsAt: { gte: now } }],
+            },
+          ],
+        },
+        orderBy: [{ startsAt: "desc" }, { createdAt: "desc" }],
       }),
     ]);
 
@@ -86,8 +104,39 @@ export default async function CoursePage({
     par: "Par",
     distance: isEnglish ? "Distance" : "Kaugus",
     courseDetails: isEnglish ? "Course details" : "Raja info",
-    meters: isEnglish ? "m" : "m",
+    meters: "m",
     coursePhoto: isEnglish ? "Course overview" : "Raja üldpilt",
+    courseLocation: isEnglish ? "Course location" : "Raja asukoht",
+  };
+
+  const noticeTypeLabels: Record<string, string> = {
+    info: t("courseNotices.types.info"),
+    event: t("courseNotices.types.event"),
+    maintenance: t("courseNotices.types.maintenance"),
+    closed: t("courseNotices.types.closed"),
+  };
+
+  const noticeStyles: Record<string, { container: string; icon: string }> = {
+    info: {
+      container:
+        "border-blue-200 bg-blue-50 dark:border-blue-900 dark:bg-blue-950/30",
+      icon: "ℹ️",
+    },
+    event: {
+      container:
+        "border-purple-200 bg-purple-50 dark:border-purple-900 dark:bg-purple-950/30",
+      icon: "📅",
+    },
+    maintenance: {
+      container:
+        "border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/30",
+      icon: "🛠️",
+    },
+    closed: {
+      container:
+        "border-red-200 bg-red-50 dark:border-red-900 dark:bg-red-950/30",
+      icon: "🚫",
+    },
   };
 
   return (
@@ -139,6 +188,51 @@ export default async function CoursePage({
           </div>
         )}
       </header>
+
+      {/* Rajateated */}
+      {notices.length > 0 && (
+        <section
+          aria-label={t("courseNotices.heading")}
+          className="flex flex-col gap-3"
+        >
+          {notices.map((notice) => {
+            const noticeTitle = isEnglish ? notice.titleEn : notice.titleEt;
+
+            const noticeMessage = isEnglish
+              ? notice.messageEn
+              : notice.messageEt;
+
+            const style = noticeStyles[notice.type] ?? noticeStyles.info;
+
+            return (
+              <article
+                key={notice.id}
+                className={`rounded-2xl border p-4 sm:p-5 ${style.container}`}
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl" aria-hidden="true">
+                    {style.icon}
+                  </span>
+
+                  <div className="min-w-0 flex-1">
+                    <p className="mb-1 text-xs font-bold uppercase tracking-wide text-neutral-500 dark:text-neutral-400">
+                      {noticeTypeLabels[notice.type] ?? noticeTypeLabels.info}
+                    </p>
+
+                    <h2 className="text-base font-bold text-neutral-900 dark:text-white sm:text-lg">
+                      {noticeTitle}
+                    </h2>
+
+                    <p className="mt-2 whitespace-pre-wrap text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
+                      {noticeMessage}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            );
+          })}
+        </section>
+      )}
 
       {/* Kiirstatistika */}
       <section
@@ -305,7 +399,7 @@ export default async function CoursePage({
         <aside className="flex flex-col gap-4 rounded-3xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900 sm:p-5">
           <div>
             <h2 className="mb-3 text-lg font-bold">
-              {isEnglish ? "Course location" : "Raja asukoht"}
+              {pageText.courseLocation}
             </h2>
             <CourseMiniMap
               lat={course.latitude}
